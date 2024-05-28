@@ -1,5 +1,4 @@
 import Styles from "./Card.module.css";
-
 export const Card = (props) => {
   return (
     <article className={Styles["card"]}>
@@ -13,7 +12,7 @@ export const Card = (props) => {
             <span className={Styles["card__accent"]}>{props.developer}</span>
           </p>
           <p className={Styles["card__votes"]}>
-            Голосов на сайте:
+            Голосов на сайте:{" "}
             <span className={Styles["card__accent"]}>{props.users.length}</span>
           </p>
         </div>

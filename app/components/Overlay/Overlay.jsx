@@ -1,4 +1,3 @@
-'use client';
 import Styles from "./Overlay.module.css";
 
 export const Overlay = (props) => {
@@ -7,7 +6,7 @@ export const Overlay = (props) => {
       className={`${Styles["overlay"]} ${
         props.isOpened && Styles["overlay_is-opened"]
       }`}
-      onClick={() => props.close()}
+      onClick={props.close}
     ></div>
   );
 };

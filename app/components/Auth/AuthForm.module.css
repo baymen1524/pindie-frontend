@@ -35,10 +35,6 @@
   font-size: 22px;
 }
 
-.form__message {
-  margin-bottom: 20px;
-}
-
 .form__actions {
   display: flex;
   justify-content: center;
@@ -63,7 +59,7 @@
 }
 
 .form__reset:disabled {
-  opacity: .9;
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -89,6 +85,10 @@
 }
 
 .form__submit:disabled {
-  opacity: .5;
+  opacity: 0.5;
   pointer-events: none;
+}
+
+.form__message {
+  margin-bottom: 20px;
 }

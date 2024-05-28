@@ -1,7 +1,6 @@
-import Styles from "./CardsListSection.module.css";
+import Styles from "./CardsList.module.css";
 import { CardsList } from "./CardsList";
 import { CardsSlider } from "./CardsSlider";
-
 
 export const CardsListSection = (props) => {
   return (
@@ -12,4 +11,4 @@ export const CardsListSection = (props) => {
       {props.type === 'slider' ? <CardsSlider data={props.data} /> : <CardsList data={props.data} />}
     </section>
   );
-};
+}; 
