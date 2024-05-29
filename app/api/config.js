@@ -1,4 +1,4 @@
-export const BASE_URL = "http://frontpindieeeee.nomoredomainswork.ru";
+export const BASE_URL = "http://localhost:3000";
 
 export const endpoints = {
   games: `${BASE_URL}/games`,
