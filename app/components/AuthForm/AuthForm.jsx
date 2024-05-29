@@ -1,45 +1,33 @@
 "use client";
-
-import {useState, useEffect } from "react";
-import { useStore } from "../../store/app-store";
-
-import { endpoints } from "@/app/api/config";
-
-import { authorize } from "@/app/api/api-utils";
-import { isResponseOk} from "@/app/api/api-utils";
-
 import Styles from "./AuthForm.module.css";
+import { useState, useEffect } from "react";
+import { endpoints } from "@/app/api/config";
+import { authorize } from "@/app/api/api-utils";
+import { isResponseOk } from "@/app/api/api-utils";
+import { useStore } from "@/app/store/app-store";
 
 export const AuthForm = (props) => {
   const authContext = useStore();
-  const [authData, setAuthData] = useState({ email: "", password: "" }); 
+  const [authData, setAuthData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState({ status: null, text: null });
   const handleInput = (e) => {
-    /* 
-        В объекте authData по ключу e.target.name находится 
-        изменяемое значение и перезаписывается
-        новым текстом из поля ввода (e.target.value). 
-        Спред ... перед authData нужен, чтобы сохранить
-        данные, не изменившиеся при вводе текста в одном из полей
-    */
     setAuthData({ ...authData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = await authorize(endpoints.auth, authData);
     if (isResponseOk(userData)) {
-      authContext.login({...userData, id: userData._id}, userData.jwt);
+      authContext.login({ ...userData, id: userData._id }, userData.jwt);
       setMessage({ status: "success", text: "Вы авторизовались!" });
     } else {
       setMessage({ status: "error", text: "Неверные почта или пароль" });
     }
   };
-
   useEffect(() => {
-    let timer; 
-    if(authContext.user) {
+    let timer;
+    if (authContext.user) {
       timer = setTimeout(() => {
-        setMessage({ status: null, text: null});
+        setMessage({ status: null, text: null });
         props.close();
       }, 1000);
     }
@@ -63,9 +51,9 @@ export const AuthForm = (props) => {
           <span className={Styles["form__field-title"]}>Пароль</span>
           <input
             onInput={handleInput}
-            name="password"
             className={Styles["form__field-input"]}
             type="password"
+            name="password"
             placeholder="***********"
           />
         </label>
