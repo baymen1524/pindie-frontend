@@ -11,24 +11,6 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/new/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/new/page.css",
-      "static/chunks/app/new/page.js"
-    ],
-    "/shooters/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/shooters/page.css",
-      "static/chunks/app/shooters/page.js"
-    ],
-    "/runners/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/runners/page.css",
-      "static/chunks/app/runners/page.js"
     ]
   }
 }
