@@ -1,5 +1,4 @@
-export const BASE_URL =
-  " https://backend-nevebnavern.nomorepartiesco.ru/admin/dashboard";
+export const BASE_URL ="http://pindieeeee.nomoredomainswork.ru/api";
 
 export const endpoints = {
   games: `${BASE_URL}/games`,
