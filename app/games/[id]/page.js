@@ -102,3 +102,4 @@ import Styles from "./Game.module.css";
     </main>
   );
 }
+console.log (GamePage(props))
