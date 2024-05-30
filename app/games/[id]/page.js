@@ -13,7 +13,7 @@ import { useStore } from "@/app/store/app-store";
 
 import Styles from "./Game.module.css";
 
-export default function GamePage(props) {
+ export default function GamePage(props) {
   const [game, setGame] = useState(null);
   const [preloaderVisible, setPreloaderVisible] = useState(true);
   const [isVoted, setIsVoted] = useState(false);
